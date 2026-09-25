@@ -18,8 +18,9 @@ export default defineConfig({
     // Migrate / introspection use a direct (non-pooled) connection. Fall back to
     // the pooled URL when a dedicated direct URL is not configured.
     url:
+      process.env.DATABASE_URL ??
       process.env.POSTGRES_URL_NON_POOLING ??
       process.env.POSTGRES_PRISMA_URL ??
-      '',
+      'postgresql://postgres:Rahult876780@db.qqhbqnhagnxqzzfcqiay.supabase.co:5432/postgres',
   },
 })
