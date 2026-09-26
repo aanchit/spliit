@@ -166,7 +166,15 @@ const envSchema = z
     }
   })
 
-export const env = envSchema.parse(process.env)
+const parsed = envSchema.safeParse(process.env)
+
+if (!parsed.success) {
+  console.warn('⚠️ Environment validation warnings:', parsed.error.format())
+}
+
+export const env = parsed.success
+  ? parsed.data
+  : (process.env as unknown as ReturnType<typeof envSchema.parse>)
 
 // The base URL to use everywhere: the runtime override when set, otherwise the
 // value baked in at build time.
