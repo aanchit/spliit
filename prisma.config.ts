@@ -12,9 +12,8 @@ export default defineConfig({
   },
   datasource: {
     url:
-      process.env.DATABASE_URL ??
       process.env.POSTGRES_URL_NON_POOLING ??
-      process.env.POSTGRES_PRISMA_URL ??
+      process.env.DATABASE_URL ??
       'postgresql://postgres.qqhbqnhagnxqzzfcqiay:Rahult876780@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres',
   },
 })
