@@ -15,6 +15,6 @@ export default defineConfig({
       process.env.DATABASE_URL ??
       process.env.POSTGRES_URL_NON_POOLING ??
       process.env.POSTGRES_PRISMA_URL ??
-      'postgresql://postgres.qqhbqnhagnxqzzfcqiay:Rahult876780@aws-0-ap-northeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true',
+      'postgresql://postgres.qqhbqnhagnxqzzfcqiay:Rahult876780@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres',
   },
 })
